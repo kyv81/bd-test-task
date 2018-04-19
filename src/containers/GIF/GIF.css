@@ -1,0 +1,9 @@
+.GIFViewer__image {
+  margin-bottom: 13px;
+  height: 333px;
+  overflow: hidden;
+}
+
+img {
+  min-height: 100%;
+}
