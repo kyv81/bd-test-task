@@ -1,9 +1,6 @@
 .GIFViewer {
-  width: 100%;
-}
-
-.GIFViewer__image {
-  margin-bottom: 13px;
-  height: 333px;
-  overflow: hidden;
-}
+  width: 100%; }
+  .GIFViewer__image {
+    margin-bottom: 13px;
+    height: 333px;
+    overflow: hidden; }
