@@ -1,21 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './Input.css';
+import styled from 'styled-components';
 
-const Input = ({ onChange, placeholder, value }) => (
-  <input
-    className="input"
-    onChange={onChange}
-    placeholder={placeholder}
-    type="text"
-    value={value}
-  />
-);
+const Input = styled.input`
+  width: 35%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #393939;
+  outline: none;
+  font-size: 16px;
+  color: #393939;
 
-Input.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  placeholder: PropTypes.string,
-  value: PropTypes.string.isRequired,
-};
+  &::placeholder {
+    color: #a60436;
+  }
+`;
 
 export default Input;

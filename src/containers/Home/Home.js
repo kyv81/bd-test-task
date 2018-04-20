@@ -19,6 +19,7 @@ class Home extends Component {
         <Input
           onChange={this.handleChange}
           placeholder="Ваше имя"
+          type="text"
           value={name}
         />
         <p className="home__text">Приветствую, {name || 'пользователь'}</p>
