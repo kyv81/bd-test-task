@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import './Image.css';
 
 const Image = ({ img, isLoading, error }) => {
   if (isLoading) {
@@ -6,10 +8,16 @@ const Image = ({ img, isLoading, error }) => {
   }
 
   if (error) {
-    return <p>Произошла ошибка</p>;
+    return <p>Ошибка загрузки</p>;
   }
 
   return <img src={img} alt="gif" />;
+};
+
+Image.propTypes = {
+  img: PropTypes.string.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  error: PropTypes.object,
 };
 
 export default Image;

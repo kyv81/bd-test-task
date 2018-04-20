@@ -23,17 +23,13 @@ class Counter extends Component {
     const { counter } = this.state;
 
     return (
-      <div className="buttons">
-        <Button className="btn" onClick={this.handleClickIncrement}>
-          Increment
-        </Button>
-        <Button className="btn" onClick={this.handleClickDecrement}>
-          Decrement
-        </Button>
-        <Button className="btn" onClick={this.handleClickReset}>
-          Reset
-        </Button>
-        <span>Counter: {counter}</span>
+      <div className="counter">
+        <div className="counter__buttons">
+          <Button onClick={this.handleClickIncrement}>Increment</Button>
+          <Button onClick={this.handleClickDecrement}>Decrement</Button>
+          <Button onClick={this.handleClickReset}>Reset</Button>
+        </div>
+        <span className="counter__text">Counter: {counter}</span>
       </div>
     );
   }

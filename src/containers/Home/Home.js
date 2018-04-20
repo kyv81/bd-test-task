@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Input from 'components/Input';
+import './Home.css';
 
 class Home extends Component {
   state = {
@@ -14,9 +15,13 @@ class Home extends Component {
     const { name } = this.state;
 
     return (
-      <div>
-        <Input onChange={this.handleChange} value={name} />
-        <p>Приветствую, {name || 'пользователь'}</p>
+      <div className="home">
+        <Input
+          onChange={this.handleChange}
+          placeholder="Ваше имя"
+          value={name}
+        />
+        <p className="home__text">Приветствую, {name || 'пользователь'}</p>
       </div>
     );
   }

@@ -21,13 +21,14 @@ class App extends Component {
           </Link>
         </nav>
 
-        <hr />
-        <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/counter" component={Counter} />
-          <Route path="/GIF" component={GIF} />
-          <Redirect from="*" to="/" />
-        </Switch>
+        <div className="main">
+          <Switch>
+            <Route path="/" component={Home} exact />
+            <Route path="/counter" component={Counter} />
+            <Route path="/GIF" component={GIF} />
+            <Redirect from="*" to="/" />
+          </Switch>
+        </div>
       </div>
     );
   }
