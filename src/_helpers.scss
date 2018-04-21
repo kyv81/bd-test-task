@@ -1,0 +1,13 @@
+$main-color: #a60436;
+$secondary-color: #d20444;
+$border-color: #4d0219;
+$bg-color: #f9f9f9;
+$nav-color: #252525;
+$input-color: #393939;
+
+@mixin flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

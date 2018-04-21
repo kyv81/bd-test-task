@@ -1,9 +1,17 @@
 import { createActions } from 'redux-actions';
 
-const { getImagesRequest, getImagesSuccess, getImagesFailure } = createActions({
-  GET_IMAGES_REQUEST: null,
-  GET_IMAGES_SUCCESS: null,
-  GET_IMAGES_FAILURE: null,
+const {
+  images: {
+    request: getImagesRequest,
+    success: getImagesSuccess,
+    failure: getImagesFailure,
+  },
+} = createActions({
+  IMAGES: {
+    REQUEST: null,
+    SUCCESS: null,
+    FAILURE: null,
+  },
 });
 
 export { getImagesRequest, getImagesSuccess, getImagesFailure };

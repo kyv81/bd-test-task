@@ -5,6 +5,7 @@ import Image from 'components/Image';
 import './GIF.css';
 import { connect } from 'react-redux';
 import { getImagesRequest } from 'actions/imageActions';
+import { getImg, getIsLoading, getError } from 'reducers/selectors';
 
 class GIF extends Component {
   static propTypes = {
@@ -37,9 +38,9 @@ class GIF extends Component {
 }
 
 const mapStateToProps = state => ({
-  img: state.image.img,
-  isLoading: state.image.isLoading,
-  error: state.image.error,
+  img: getImg(state),
+  isLoading: getIsLoading(state),
+  error: getError(state),
 });
 
 const mapDispatchToProps = { getImagesRequest };

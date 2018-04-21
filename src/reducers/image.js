@@ -1,24 +1,37 @@
+import { handleActions } from 'redux-actions';
+import { combineReducers } from 'redux';
 import {
-  GET_IMAGES_REQUEST,
-  GET_IMAGES_SUCCESS,
-  GET_IMAGES_FAILURE,
-} from 'actions/imageTypes';
+  getImagesRequest,
+  getImagesSuccess,
+  getImagesFailure,
+} from 'actions/imageActions';
 
-const initialState = {
-  img: '',
-  isLoading: false,
-  error: null,
-};
+const img = handleActions(
+  {
+    [getImagesSuccess]: (state, action) => action.payload,
+  },
+  '',
+);
 
-export default (state = initialState, action) => {
-  switch (action.type) {
-    case GET_IMAGES_REQUEST:
-      return { ...state, isLoading: true };
-    case GET_IMAGES_SUCCESS:
-      return { ...state, img: action.payload, isLoading: false };
-    case GET_IMAGES_FAILURE:
-      return { ...state, error: action.payload, isLoading: false };
-    default:
-      return state;
-  }
-};
+const isLoading = handleActions(
+  {
+    [getImagesRequest]: () => true,
+    [getImagesSuccess]: () => false,
+    [getImagesFailure]: () => false,
+  },
+  false,
+);
+
+const error = handleActions(
+  {
+    [getImagesRequest]: () => null,
+    [getImagesFailure]: (state, action) => action.payload,
+  },
+  null,
+);
+
+export default combineReducers({
+  img,
+  isLoading,
+  error,
+});
